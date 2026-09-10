@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Grupo do PC — ofertas de informática direto no WhatsApp.">
+<title>Grupo do PC — Ofertas de Informática</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap");
+:root{
+  --bg:#03070a;--panel:#071217;--panel2:#0a1a20;--line:#123d46;
+  --green:#13e3a6;--green2:#00a87d;--gold:#f5c24b;--gold2:#d99b18;
+  --text:#f4fbfb;--muted:#9bb0b4;--danger:#ffcf59;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;width:100%;min-width:0;overflow-x:hidden}
+body{
+  background:
+    radial-gradient(circle at 78% 4%,rgba(0,190,160,.16),transparent 28%),
+    radial-gradient(circle at 18% 18%,rgba(18,78,95,.18),transparent 32%),
+    var(--bg);
+  color:var(--text);
+  font-family:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+a{color:inherit}
+.site{width:100%;overflow:hidden}
+.wrap{width:100%;max-width:1220px;margin:auto;padding:0 24px}
+
+/* Header */
+.top{height:76px;border-bottom:1px solid #0d2d34;background:rgba(2,7,10,.94);display:flex;align-items:center}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand-mark{width:38px;height:38px;display:block;flex:none}
+.brand-word{font-size:18px;font-weight:950;letter-spacing:-.5px;line-height:1}
+.brand-word span{color:var(--green)}
+.trust{font-size:11px;color:#9fb3b6;text-align:right;line-height:1.35}
+.trust b{color:#fff}
+
+/* Shared buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:0;border-radius:9px;padding:13px 19px;
+  font-weight:950;font-size:11px;letter-spacing:.2px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;transition:transform .2s,filter .2s;
+  white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.green{background:linear-gradient(180deg,#22edb1,#00a67b);color:#001710;box-shadow:0 9px 28px rgba(0,232,170,.18)}
+.gold{background:linear-gradient(180deg,#ffdc78,#e1a51c);color:#251900;box-shadow:0 9px 28px rgba(245,194,75,.17)}
+
+/* Hero actions */
+.hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:2px}
+.hero-actions .btn{min-height:43px}
+.hero-actions .gold{box-shadow:0 9px 28px rgba(245,194,75,.16)}
+@media(max-width:520px){.hero-actions{flex-direction:column;align-items:stretch;gap:9px}.hero-actions .btn{width:100%}}
+
+/* Heroes */
+.hero,.rei-section{position:relative;overflow:hidden}
+.hero{min-height:470px;border-bottom:1px solid #0d3942;background:#041015}
+.hero-bg,.rei-bg{position:absolute;inset:0}
+.hero-bg img,.rei-bg img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-bg:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(2,7,10,.98) 0%,rgba(2,7,10,.91) 31%,rgba(2,7,10,.52) 57%,rgba(2,7,10,.16) 100%)
+}
+.hero .wrap{position:relative;z-index:2;min-height:470px;display:flex;align-items:center}
+.hero-content{width:600px;max-width:100%;padding:50px 0}
+.eyebrow{font-size:12px;letter-spacing:2.7px;color:var(--green);font-weight:950}
+ .hero h1{font-family:"Syne",sans-serif;font-size:clamp(42px,5.4vw,70px);line-height:.9;margin:10px 0 18px;letter-spacing:-3px;text-transform:uppercase}
+.hero h1 span{color:var(--green)}
+.hero-sub{font-family:"Syne",sans-serif;font-size:19px;line-height:1.1;letter-spacing:1px;font-weight:950;text-transform:uppercase}
+.hero p{font-size:14px;line-height:1.62;color:#c5d2d5;max-width:535px;margin:18px 0 24px}
+.hero-sidecopy,.rei-sidecopy{position:absolute;right:4.5%;top:50%;transform:translateY(-50%);width:260px}
+.hero-sidecopy .kicker,.rei-sidecopy .kicker{font-size:11px;letter-spacing:2px;font-weight:950}
+.hero-sidecopy .kicker{color:var(--green)}
+.hero-sidecopy strong,.rei-sidecopy strong{display:block;font-size:29px;line-height:1.02;margin-top:9px;text-transform:uppercase;text-shadow:0 3px 20px rgba(0,0,0,.7)}
+.hero-sidecopy span{color:var(--green)}
+
+/* Sections */
+.section{padding:32px 0 36px;width:100%;overflow:hidden}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:16px;border-left:3px solid var(--green);padding-left:13px;margin-bottom:17px}
+.section-title h2{font-family:"Syne",sans-serif;font-size:15px;margin:0;text-transform:uppercase;letter-spacing:.8px}
+.section-title small{color:#55dfc3;font-size:9px;font-weight:950;white-space:nowrap}
+.rail-viewport{position:relative;width:100%;overflow:hidden}
+.rail{
+  display:flex;flex-wrap:nowrap;gap:13px;width:100%;max-width:100%;
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:none;
+  padding:3px 3px 13px;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain;
+  cursor:grab;
+}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.rail::-webkit-scrollbar{display:none}
+
+/* Cards */
+.card{
+  flex:0 0 224px;width:224px;min-width:224px;
+  background:linear-gradient(160deg,#0a2027,#051015);
+  border:1px solid #17505a;border-radius:10px;overflow:hidden;
+  box-shadow:0 13px 30px rgba(0,0,0,.3);scroll-snap-align:start;
+}
+.card-img{height:132px;position:relative;overflow:hidden;background:#081318}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.card:hover .card-img img{transform:scale(1.035)}
+.tag{
+  position:absolute;top:9px;right:9px;z-index:2;
+  min-width:47px;height:23px;padding:0 8px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:950;background:var(--green);color:#001a13;
+  box-shadow:0 3px 11px rgba(0,0,0,.48)
+}
+.card-body{padding:10px 11px 11px}
+.card h3{font-size:11px;line-height:1.3;margin:2px 0 6px;min-height:43px}
+.old{font-size:9px;color:#789196;text-decoration:line-through}
+.price{font-size:17px;font-weight:950;line-height:1.1;margin-top:2px}
+.meta{display:flex;justify-content:space-between;gap:7px;color:#81969a;font-size:8px;margin:6px 0 9px}
+.card .btn{width:100%;padding:9px 6px;font-size:8px;border-radius:7px}
+
+/* Warning */
+.warning{
+  flex:0 0 224px;width:224px;min-width:224px;min-height:308px;
+  scroll-snap-align:start;border:1px solid #725314;border-radius:10px;
+  background:
+    radial-gradient(circle at 72% 15%,rgba(245,194,75,.17),transparent 35%),
+    linear-gradient(160deg,#171307,#0a0c0b);
+  padding:19px 16px;display:flex;flex-direction:column;justify-content:center;
+}
+.warning .shield{
+  width:42px;height:42px;border:1px solid #9b741f;border-radius:12px;
+  display:grid;place-items:center;color:var(--gold);font-weight:950;font-size:18px;margin-bottom:13px;
+}
+.warning h3{font-size:14px;color:var(--gold);margin:0 0 9px;text-transform:uppercase}
+.warning p{font-size:10px;line-height:1.62;color:#c9c7be;margin:0}
+
+/* Categories */
+.categories{display:flex;gap:11px;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:8px;touch-action:pan-x}
+.categories::-webkit-scrollbar{display:none}
+.cat{flex:0 0 140px;width:140px;height:104px;border:1px solid #16434d;border-radius:8px;background:#061318;position:relative;overflow:hidden}
+.cat img{width:100%;height:100%;object-fit:cover;opacity:.78;display:block}
+.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.84) 100%)}
+.cat span{position:absolute;z-index:2;left:9px;right:9px;bottom:8px;font-size:9px;font-weight:950;text-transform:uppercase;text-shadow:0 2px 8px #000}
+
+/* Rei */
+.rei-section{min-height:390px;border-top:1px solid #634912;border-bottom:1px solid #634912;background:#110d05}
+.rei-bg:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(12,8,2,.97) 0%,rgba(12,8,2,.88) 31%,rgba(12,8,2,.47) 58%,rgba(12,8,2,.15) 100%)
+}
+.rei-section .wrap{position:relative;z-index:2;min-height:390px;display:flex;align-items:center}
+.rei-copy{width:520px;max-width:100%;padding:45px 0}
+.rei-logo{font-size:17px;font-weight:950;color:var(--gold);letter-spacing:.5px}
+.rei-copy h2{font-size:32px;line-height:.98;margin:10px 0 13px}
+.rei-copy p{font-size:12px;line-height:1.6;color:#d3cbbd;max-width:465px;margin:0 0 22px}
+.rei-sidecopy .kicker{color:var(--gold)}
+.rei-sidecopy span{color:var(--gold)}
+.rei-title{border-left-color:var(--gold)}
+.rei-title small{color:var(--gold)}
+.rei-card{border-color:#6b4b13;background:linear-gradient(160deg,#241706,#100c05)}
+.rei-card .tag{background:linear-gradient(180deg,#ffda72,#e3a922);color:#211600}
+.rei-card .btn{background:linear-gradient(180deg,#ffda72,#e3a922);color:#211600}
+
+/* Footer */
+.footer{padding:27px 0;border-top:1px solid #113038;background:#020608}
+.footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer p{font-size:9px;color:#71888b;margin:0;text-align:right}
+.footer p b{color:#a8b9bb}
+
+/* Arrows */
+.arrow{
+  position:absolute;top:45%;transform:translateY(-50%);
+  width:34px;height:34px;border-radius:50%;border:1px solid #1a6671;
+  background:#06161b;color:#fff;z-index:5;cursor:pointer;font-size:22px;line-height:1;
+  display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.35)
+}
+.prev{left:0}.next{right:0}
+
+/* Responsive */
+@media(max-width:1050px){
+  .hero-sidecopy,.rei-sidecopy{display:none}
+  .hero-content,.rei-copy{width:100%;max-width:650px}
+}
+@media(max-width:720px){
+  .wrap{padding-left:15px;padding-right:15px}
+  .top{height:64px}
+  .brand-mark{width:34px;height:34px}
+  .brand-word{font-size:16px}
+  .trust{display:none}
+  .hero{min-height:510px}
+  .hero .wrap{min-height:510px;align-items:flex-start}
+  .hero-bg:after{background:linear-gradient(180deg,rgba(2,7,10,.9) 0%,rgba(2,7,10,.76) 47%,rgba(2,7,10,.4) 100%)}
+  .hero-bg img{object-position:64% center}
+  .hero-content{padding:38px 0 28px}
+   .hero h1{font-family:"Syne",sans-serif;font-size:clamp(35px,10.7vw,46px);letter-spacing:-1.8px}
+  .hero-sub{font-size:14px;letter-spacing:.7px}
+  .hero p{font-size:12.5px;line-height:1.55;margin:15px 0 21px}
+  .section{padding:24px 0 29px}
+  .section-title{align-items:flex-end}
+  .section-title h2{font-size:13px}
+  .section-title small{font-size:8px}
+  .arrow{display:none}
+  .card,.warning{flex-basis:205px;width:205px;min-width:205px}
+  .card-img{height:116px}
+  .categories{gap:10px}
+  .cat{flex-basis:128px;width:128px;height:96px}
+  .rei-section{min-height:465px}
+  .rei-section .wrap{min-height:465px;align-items:flex-start}
+  .rei-bg:after{background:linear-gradient(180deg,rgba(12,8,2,.94) 0%,rgba(12,8,2,.74) 54%,rgba(12,8,2,.32) 100%)}
+  .rei-bg img{object-position:64% center}
+  .rei-copy{padding:38px 0}
+  .rei-copy h2{font-size:28px}
+  .footer .wrap{align-items:flex-start}
+}
+@media(max-width:420px){
+  .wrap{padding-left:13px;padding-right:13px}
+  .brand-word{font-size:15px}
+  .hero{min-height:525px}.hero .wrap{min-height:525px}
+  .hero-content{padding-top:31px}
+   .hero h1{font-family:"Syne",sans-serif;font-size:35px}
+  .hero-sub{font-size:13px}
+  .hero p{font-size:12px}
+  .rei-section,.rei-section .wrap{min-height:450px}
+  .rei-copy h2{font-size:26px}
+}
+
+/* DOGMA V1 REBUILD */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
+body{font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.hero h1,.rei-copy h2,.section-title h2,.hero-sub,.eyebrow,.rei-logo,.brand-word{font-family:'Syne','Manrope',sans-serif}
+.hero h1{font-weight:800;letter-spacing:-2.2px}.hero-sub{font-weight:800;letter-spacing:.6px}.hero p{font-weight:500}.card h3{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.15px}.section-title h2{font-weight:800}.btn{font-family:'Manrope',sans-serif;font-weight:800}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}.brand-mark{width:42px;height:42px;display:block;flex:0 0 auto;filter:drop-shadow(0 4px 12px rgba(0,240,176,.18))}.brand-word{font-size:18px;font-weight:800;letter-spacing:.2px;line-height:1}.brand-word span{color:var(--green)}
+.rei-logo{font-family:"Syne",sans-serif;display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.6px}.rei-crown{width:34px;height:25px;display:inline-block}
+.card-img{background:linear-gradient(145deg,#f7f9f9,#dce5e6)}.card-img img{object-fit:contain}
+@media(max-width:720px){.brand-word{font-size:17px}.brand-mark{width:39px;height:39px}}
+@media(max-width:420px){.brand-word{font-size:16px}.brand-mark{width:37px;height:37px}}
+
+.brand{display:flex;align-items:center;text-decoration:none;line-height:.82;gap:10px}.brand-word{display:flex;flex-direction:column;gap:3px;font-family:"Syne",sans-serif;letter-spacing:-.6px}.brand-word small{font-size:9px;letter-spacing:3px;font-weight:800;color:#9bb0b4}.brand-word strong{font-size:24px;font-weight:800;font-style:italic;letter-spacing:-1.8px;text-shadow:0 0 24px rgba(0,232,170,.10)}.brand-word strong span{color:var(--green)}.rei-logo{gap:10px}.rei-logo .crown{font-size:31px;line-height:1;color:var(--gold);transform:translateY(-2px)}.rei-logo small{display:block;font-size:8px;letter-spacing:3px;color:#c9a64c;font-weight:800}.rei-logo strong{display:block;font-size:20px;line-height:.9;letter-spacing:-.5px;color:#ffe29a}
+.card h3{font-family:"Manrope",sans-serif;font-weight:800;letter-spacing:-.15px}.hero h1,.rei-copy h2{letter-spacing:-1.8px}
+
+/* FINAL LOGO POLISH — vector marks, no raster blur */
+.brand-mark-svg{width:42px;height:42px;display:block;flex:0 0 auto;color:var(--green);filter:drop-shadow(0 4px 12px rgba(0,240,176,.18))}
+.rei-logo-mark{width:38px;height:38px;display:block;flex:0 0 auto;color:var(--gold);filter:drop-shadow(0 4px 12px rgba(245,194,75,.16))}
+.rei-logo{align-items:center}
+@media(max-width:720px){.brand-mark-svg{width:39px;height:39px}.rei-logo-mark{width:35px;height:35px}}
+@media(max-width:420px){.brand-mark-svg{width:37px;height:37px}.rei-logo-mark{width:33px;height:33px}}
+</style>
+<!-- QA: 20 PC cards and 20 Rei cards use unique image indices; no modulo/reuse renderer. -->
+</head>
+<body>
+<div class="site">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Grupo do PC">
+       <svg class="brand-mark-svg" viewBox="0 0 64 64" aria-hidden="true">
+         <path d="M9 50V17L25 8v15L42 8v13L24 32v18L9 50Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+         <path d="M35 40h17v12H35z" fill="none" stroke="currentColor" stroke-width="5"/>
+         <path d="M35 40 52 29" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+       </svg>
+       <div class="brand-word"><small>GRUPO</small><strong>DO <span>PC</span></strong></div>
+     </a>
+    <div class="trust">✓ Ofertas selecionadas<br><b>e verificadas para nosso grupo</b></div>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1800&q=88" alt="Computadores e componentes de alto desempenho">
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="eyebrow">GRUPO DO PC</div>
+      <h1>AS MELHORES<br>OFERTAS DE <span>INFORMÁTICA</span></h1>
+      <div class="hero-sub">DIRETO NO SEU WHATSAPP</div>
+      <p>Placas de vídeo, processadores, memórias, SSDs, monitores, periféricos e muito mais. Tudo selecionado com as melhores condições e enviado direto para o seu WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="btn green" href="https://chat.whatsapp.com/FulbcOKDIrKEQG0Wxs2DRh" target="_blank" rel="noopener">ENTRAR NO GRUPO DO PC →</a>
+        <a class="btn gold" href="https://chat.whatsapp.com/DEU5Gi2lAoM9rU3NfdZ9bI" target="_blank" rel="noopener">ENTRAR NO DESCONTO DO REI →</a>
+      </div>
+    </div>
+    <div class="hero-sidecopy">
+      <div class="kicker">PARA QUEM ESTÁ MONTANDO</div>
+      <strong>MONTE SEU PC<br>COM AS MELHORES<br><span>OPORTUNIDADES</span></strong>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-title"><h2>Ofertas recentes do Grupo do PC</h2><small>20 OFERTAS EM DESTAQUE →</small></div>
+    <div class="rail-viewport">
+      <button class="arrow prev" data-target="pcRail" aria-label="Anterior">‹</button>
+      <div class="rail" id="pcRail"></div>
+      <button class="arrow next" data-target="pcRail" aria-label="Próxima">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:3px">
+  <div class="wrap">
+    <div class="section-title"><h2>O que você encontra no Grupo do PC</h2><small>HARDWARE • PERIFÉRICOS • OFERTAS</small></div>
+    <div class="categories" id="cats"></div>
+  </div>
+</section>
+
+<section class="rei-section">
+  <div class="rei-bg">
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=88" alt="Produtos para o dia a dia">
+  </div>
+  <div class="wrap">
+    <div class="rei-copy">
+      <div class="rei-logo">
+         <svg class="rei-logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+           <path d="M10 15 20 23 32 10l12 13 10-8-5 33H15l-5-33Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+           <path d="M24 40c3-6 13-6 16 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+           <path d="M29 34h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+         </svg>
+         <span><small>DESCONTO</small><strong>DO REI</strong></span>
+       </div>
+      <h2>AS MELHORES OFERTAS<br>PARA O SEU DIA A DIA</h2>
+      <p>Eletrônicos, casa, beleza, moda, ferramentas e muito mais. Um grupo com ofertas selecionadas para encontrar bons preços sem perder tempo.</p>
+      <a class="btn gold" href="https://chat.whatsapp.com/DEU5Gi2lAoM9rU3NfdZ9bI" target="_blank" rel="noopener">ENTRAR NO DESCONTO DO REI →</a>
+    </div>
+    <div class="rei-sidecopy">
+      <div class="kicker">OFERTAS PARA O DIA A DIA</div>
+      <strong>DESCONTOS<br>QUE VOCÊ REALMENTE<br><span>ENCONTRA.</span></strong>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#080702">
+  <div class="wrap">
+    <div class="section-title rei-title"><h2>Ofertas recentes do Desconto do Rei</h2><small>20 OFERTAS EM DESTAQUE →</small></div>
+    <div class="rail-viewport">
+      <button class="arrow prev" data-target="reiRail" aria-label="Anterior">‹</button>
+      <div class="rail" id="reiRail"></div>
+      <button class="arrow next" data-target="reiRail" aria-label="Próxima">›</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Grupo do PC">
+       <svg class="brand-mark-svg" viewBox="0 0 64 64" aria-hidden="true">
+         <path d="M9 50V17L25 8v15L42 8v13L24 32v18L9 50Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+         <path d="M35 40h17v12H35z" fill="none" stroke="currentColor" stroke-width="5"/>
+         <path d="M35 40 52 29" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+       </svg>
+       <div class="brand-word"><small>GRUPO</small><strong>DO <span>PC</span></strong></div>
+     </a>
+    <p>Do setup ao seu dia a dia.<br><b>Sempre tem desconto.</b></p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+const pcImages = [
+"https://t.ctcdn.com.br/3VFZMNaauo2dpqUgbG5xE7mBqNU%3D/1024x576/smart/i955273.png",
+"https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/w/d/wds100t3x0e2.jpg",
+"https://content1.rozetka.com.ua/goods/images/big/421893667.jpg",
+"https://i5.walmartimages.com/seo/Corsair-Vengeance-RGB-PRO-16GB-2x8GB-DDR4-3200MHz-C16-LED-Desktop-Memory-Black_781ce717-1e37-4bc7-b5d9-610f8bbf4296.18c33ef167a68f3b88cfd34d0ed6fea7.jpeg?odnBg=FFFFFF&odnHeight=573&odnWidth=573",
+"https://media.pichau.com.br/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/2/7/27g2bk231.jpg",
+"https://c1.neweggimages.com/productimage/nb640/13-144-373-V01.jpg",
+"https://store974.com/cdn/shop/products/NewProject-2022-04-12T135105.973-137463.jpg?v=1649815670",
+"https://m.media-amazon.com/images/I/51pNYpZJH3L._SL500_.jpg",
+"https://cdn.shoppub.io/cdn-cgi/image/w%3D1000%2Ch%3D1000%2Cq%3D80%2Cf%3Dauto/oficinadosbits/media/uploads/produtos/foto/ilumwtgy/file.png",
+"https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=700&q=88",
+"https://images.tcdn.com.br/img/img_prod/1401349/water_cooler_redragon_effect_ccw_1021_240mm_argb_preto_343_2_d4102abe2c4667f4e3e71cc7dbdade13.jpeg",
+"https://alarabiya-computer.com/cdn/shop/files/51SiGudmqrL.png?v=1759761825",
+"https://m.media-amazon.com/images/I/61wJJ1DrsTL._AC_SL1500_.jpg",
+"https://down-br.img.susercontent.com/file/br-11134207-820m3-mljbf49sey2u3a",
+"https://c1.neweggimages.com/productimage/nb640/26-193-142-S01.jpg",
+"https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=700&q=88",
+"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=700&q=88",
+"https://c1.neweggimages.com/productimage/nb640/26-554-076-01.jpg",
+"https://m.media-amazon.com/images/I/71h3Vq1GqTL._AC_SL1500_.jpg",
+"https://i5.walmartimages.com/seo/GAMEMAX-KF300-BK-120mm-Black-frame-ARGB-Fan-3-1-Kit-Along-Includes-Premium-V4-0-ARGB-HUB-Wireless-Remote-Controller-High-Performance-Cooling-Fan-PC-C_822542cb-8a2b-45b3-a6ea-064e79e3e160.eff204e376fb2b43c4e03cbaf12b6877.png?odnBg=FFFFFF&odnHeight=768&odnWidth=768"
+];
+
+const reiImages = [
+"https://academy.scene7.com/is/image/academy/21292723?%24pdp-thumbnails-xl-ng%24=",
+"https://www.aarfragrances.com/public/uploads/all/JkcaUyvRs4syCdI1vDUcIzXlbRiVJ8lElovBT1pL.jpg",
+"https://images.tcdn.com.br/img/img_prod/1270913/smart_tv_samsung_50_u8600f_crystal_uhd_4k_2025_6495_variacao_8563_1_d83e08edd24e2796a0b1c2533cbfddb5.jpg",
+"https://d3nt9em9l1urz8.cloudfront.net/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/n/i/nicw2288-111-1.jpg",
+"https://www.bosch-pt.co.kr/binary/ocsmedia/optimized/full/o295826v54_o295826v12gsr_12v_300_2ah_dyn_belt_cmyk.png",
+"https://assets.kenzz.com/products/404105/4894947053672.jpeg",
+"https://shop.baltrade.eu/img/product/big/przenosny-glosnik-bluetooth-5-0-havit-sk835bt-10w-ipx5-5.jpg",
+"https://m.media-amazon.com/images/I/61ZviZn9JwL._AC_SL1500_.jpg",
+"https://static.kadri.com.br/produto/multifotos/hd/102706-MAIN.png",
+"https://lojamondial.vtexassets.com/arquivos/ids/163705-800-auto?aspect=true&height=auto&v=638690194346070000&width=800",
+"https://static01.galaxus.com/productimages/2/8/8/8/4/0/6/9/4/6/4/0/5/3/8/8/8/3/1/0199f422-a8e1-7e93-857a-0f9674e11f0e_720.jpeg",
+"https://content.etilize.com/1000/1081733992.jpg",
+"https://m.media-amazon.com/images/I/4156jDyhliL.jpg",
+"https://www.iolsky.com/cdn/shop/products/2010444444444444_1_800x.jpg?v=1631864374",
+"https://bf1af2.akinoncloudcdn.com/products/2024/09/24/139045/e88c69df-b703-42c8-8fae-4aa76adcb83e_size3840_cropCenter.jpg",
+"https://image.made-in-china.com/155f0j00yPaqpZTsLFcn/Touch-Key-Control-5L-6L-8L-10L-12L-Instant-Electric-Pressure-Cooker-Model-Multi-Functional-High-Pressure-Cooker.webp",
+"https://peakalgerie.com/wp-content/uploads/2023/12/X-light-all-black-1-1.jpg",
+"https://shop.baltrade.eu/img/product/big/przenosny-glosnik-bluetooth-5-0-havit-sk835bt-10w-ipx5-5.jpg",
+"https://www.cdiscount.com/pdt2/7/6/4/1/700x700/tra1712839469764/rw/valise-grande-taille-valises-soute-valise-rigide.jpg",
+"https://www.fepy.com/media/catalog/product/cache/5/image/1000x/040ec09b1e35df139433887a97daa66f/s/t/stanley_110_pieces_multi_tool_kit_stmt81243.jpg",
+"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCACqAJEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8GbmZW2wxL8idPc+tRMQ3Cg1IFDDaB9M05YlBGf0rmvY131YW0SvIuR0PFdh8PPDsN/cNreoD/RLTJVH6SyD7o+mSK5nTNNudRvotPslJeZwqn0z3/Ku78QSQaPo0XhLSyAsSZnkH8b45rhxtV6Qju/yOzD00m5syfEmuSatqGSTs3ZIA/D/61Mj08pbpLgc9K6P4I/B7U/jd8TLL4e6V4g0vSnuYJ57nVNanaK1tYYomlkllZFZgqqjHhST0AOcV9J63+wt8CPDfgx9S1D9uX4dXN8FBjhsrTVH2jjIAEKhj9QPrXgZjnWAyurDDzlaUuiTf5I9nAZTjMdTdSK0XmfJqWkcOXkJy33QKilt2ZtxU4r19PhD+zrY3/l6r+09czhRhpLDwTOwP082dePfFdEfhl+w1ZRxy6t8cvHl2D942Hg21TB9vMuGH+elKrmlKlZ2k/SLN45TVm7OUVbzR89m0bcF29TUyaczqGVK+h4dJ/wCCbliQrQ/GjV3A/wCWT6bahv8AyE5H51v6J4h/4JzaUDs/ZZ+KuqKvH/Ew8fRxj/yDZjH51zyzuX2aFR/9u2/NoqOUQj8VSPydz5ltdEaZSFHPpWjb+HZOjQcdznivqa0+Ov7EPh8fadA/4JwpMo+7P4j8f6xMre5CNEpresf24/gpoyLH4X/4JyfBS2Kj5JNR0q8v3/Ez3Z3fiK8/F5vmkV+5wk5fOK/Vm1PA4NPWqj5MtPDJkZQFAHY54Nbmj+Bri7YJBAHPojgn+f8ASvqmw/4KbeM9OlEfhP8AZs+CWiBen2D4VWTEfjLvP/6q7DSP+Cs37VtrCF0bxD4a0YLjA0bwRplqB9MRYFeHiM34it/ulv8At+/5RPQw+BwUpaVEfL3hj4AfETVmzoPgbU7zdj/j30+V8/iq4r6G/ZV/4J3fF/4i+JorrxV8J/E9ro9uTJqV5HocxkEC8tHCpX5pWHyr2BbLEKCa3fEH/BW39tu7CaXa/tG6oryYU/Y0tY+p4A2RDB/xrS8Sf8FHv2m7jwLY/Du7+N/iS6vRcm61jV11qZJWZvlW3R127Y0XBOBy5JJ4APyma4vi/EUHCEIR5tN5Nrz2SPoMDg8DSrKTdzsvE/7C37WvxA8YRX5/Zr1mzsrRfs2i2ZsYrWDTrNWJSKMOy4HJLO2WdiWYkk19Lfs+f8E1vjRoa2l94zsNPsirq7251OAsTx94qdvTj8TX5/6D+0X8VLvUBd678TvEOqTPKDDBd6tcMqLnLF97nPXgdu9fcX7C2veMPjPexWNzqk8en2MayaxfAkMEwMRjdyHbpx2JbsBX5lxjDPaGDTqTi49Wr/qfWZfNzu6LUWvK59M/8Mjav/z00T/wZwf40V6D/Z3gb/oXk/8AAv8A+zor8p56Hn97Oz65nX8y/wDAV/mfyNrEuc4Ip8UAyT+VTvB5fK1oeG9Bk1q/jtMFVJ3SsB91O5/LP44r/S1yShqfzNGLbsbfgjTIfDuhyeLr2M+dODFYRt192/Wqs9wZXLs2ctk98+tXfE+pJeSLa2rbLe1UR28Y9B3+prO0uB765WBVPLADH1ri5d6sv6R2czbUInpH7PEx0m51jUoztnuNHe0gJPJSSSMOf0x6fN9K9U8W/AfVfDf7M1l+1N4w1WK30bXPGMvhnwxo0cgW+1meCBZ7y4j3jC28AaGJn5LyThAuVYrxfwQ8B654i+IcXg7QLEm51KW20zTgcjM8kiquOD/Gyn/Jz618Zf2kfjJ4o+Llp+zf4e+KMreBfhprl34d8E6XpOnWtrbwWkF0YnlXy4t5knkR5pJGYtI7M2QMLXh0cHHF4+dSTukke7VxE8Lgo04qze59Xf8ABIH/AIImfs8/tj/C6f49/tVa34s8MaV/ahg0nSv7es7I36KozI7yRh4xk4GOCAeegH2x8Yv+CSH/AAQ3+GPgdLCDxR4X8OahHy2p6x8TUuJnG0fwTzmIHp83lk88AHDL5b8IfAHhXwN+zzpWrXnhvT5bmPSvOuLm9tBNJIShZmZ5ATyVB5456DpX5zftGePpPGmrWGrpApvtVEg/cwoDI4ndVCqgA4DIgA64P0P1UMNQppJR2PCnOpfm5j2/45fsX/8ABIXwrqdzPpP7X+jzsWYrF/wsC5k59MRxFcY6ADHSvFNZ/Z4/4J0zXCrpP7WPhu1AbAeXxRct/wC2pJOOeOeDXz141tZJ3kBVi8bMGD9VYE5IPIODxx3Pfk113wS/ZG8DfFPwlpHjTxH+1/8AD3wlcajrF1ZvoPiHURBcWf2ea3Ec1wXZVSKUSOyuRgCFh1JFU6dPsjncpJ3PVPiX+yF/wTH8JeGIbnWv23beXVjGrPHBq986q5VMqq/2dnvg896+evE/ws/Yusblh4d/aYsrqMN8hM96cj15sxXofxo/ZI+EGs211qLft+/CGOSG6hEdsNanuDIsspQsPs6u6pGgV2IXoccnNfPPx7+CXgn4T22m3Xgv9ojwr48a/ub6K6XwvFdqtmtvKI4p3a4jTMdwpeSPgNtjO5YycU1CnbVGTqSvuauufDP9nzd5mk/Gayl/ukyz/wBYBWdo3gvwy9xs8OfE60JDhUYas0XJ6DJUAdK85sr5AfLHIGfmDckenseld74L066t7xIpF274o5F2qDuVwGAz24IrOtyJWsa0uaU9Ge4eFv2Jv2m/iB8LJ/ix8MNd07UtHs5vLnubHx9p6yK4AJAjmuEkbgnkKa860TxB8fPD+pSWTW91qnkEeeZLIz7Bx95lB6ZAznBx3r6Z+Cfhq38QfDyQXllFMyKf9bGGYcY6mvC/iPpA03xebeFTCXeSHMTmM4KnglcccDivDqfV6zcZQX3I9ykq9KKnGTPpD9hr9nvxz+2JBrUXgW8srHX9C0mTUxoWqQyqNQihQPIsMoUhZMA4WQKGOBkcV99/sHfFT4PeLvgFap8CNZklt7S4MWsrcp5d39tCgs0gycZAAQgkbeADg4/M39gX47fEf4afEbTNc8I/FHxFo1wk0azNp2syReYgK7lYHIYcDqCPavbvjj+0Rqf7JX7UHiz4Z/D/AMG6RYxfELR47iXxJp1s1lO8rp5zSvDG3kI/72Ubo44t25Dgkc/jnHPCNPO8PLDULxqL3o2ejXW/p0P0jhnOXgLVayTg9H3v0+8/Sr/hLdE/6HnSf/AtaK/Hv/hZOr/9BeX/AL/n/Givyf8A4hdL/n4/6+Z9b/rRh/8An2j4nGnfKZJEyucAk1v2Vt/wjuhneB9ovE/eDHKJ6fpmtTwd4ah1q+aa5twlpYgSSqedzn7iH3Jx+ANasvhCS9vHvdSkwW+7DuHC54GP88Yr+y6lZXt2P52jRlvY42HSbvUMCJW2bgGb8QCa7v4W+ArfTLqPxPrFq08UAHkQlCfOlPb3AHJyMdBSR+H7jzlt7SBjvYKqxr/Tv16V9gfCP9m7Vr34ZS6gvwS1DXNSkjiFtPc2MhtNOiVlbfwAHdjjOTgAjntXzue55h8BTjFv4tD6LIcmljKkqj+ycn+x3pkth8Y7H4q6jZb7HwZZXnie/m2YjxYWkt2iluxaSKNcdefpXin7IWm3vif4paRNqrNPcXV3G9wzD5nkdg7k++58/nX0r8UPiP8AEb4e/Ab4y+AbnwTNoWhaP8N7ewg1C504Qtq9/qV/a2rzpJtHmRCAXKIF7c9QQPKP+Cdvhb+2fjFo0zLwriXjkAYGK7uHfaSw7qS+1t6GGfqCxKpw6I/Wj4jXEOifAX7Cj7BFo5Xrg/6sivyL+Nzy2a+HpbdypjsZnRg20D94e/XPTpz3FfqL+0v4oXSvhhc2oYFhYMuwnH8Br8rPjlq0cr6XaAfPFocTCNFJJLuxwMA9s/n3r6bVas8OquVGToOu+DH+G194e1/4bQXN5b2rNpniLTJzBPBI8iMTdFiyTxiPcFVQhBYk5wRX1B+xP/wRd8WfHn4b6t+0R8TkubLw3pmmfb75jbyOlvC0azRosMTxy3l00QEvlCSKOJWQu5ZwtfKms/GHWvF/w3034ZSeC/DtjaWkLLFq+l+HFtbvUNqMoM9yATccuSTwRgfh+lPxK/4Ki678Kf2FtU0X4QaYj6J4o1O6bT9dt4wVtpLu1tkNrOVH+izxxq6COQIHQ7lyOmMmk9SKceaJ+e/xN+B37L3xs+I2kfCj9lm81m11q+mlttPfUNAa0S4ukhLJE8SX90u1/L2CRNjKcEqwGV+WtZ0+e0Mlhd2rpNFK0c6NGSQ4IV0JwcncME4OTjivpT9j5f8AhWvxj0D9rX4sm40zwJ4S1aS+bUZLYl/EF8sMgh07Tkwv2m4ldk3bfkiTLyMoA3cP+3J8VfBWtftv618Qv2fUiFpaXWjyW01vbK0cmqW9hZx3koQKA4e+inboA27AGGpUqk3Xt0tuTVp01Qb6nl/xDh1PQbHTPBHir4NReGdY02BftV/Lb3sF3eg7mMk8c8hTcwdcMqoNqDg5NdT4NX/TLZX6/ZYB1z0QD+lVPjl8QPin481C00j4heHotDisJpZ7PRLXRGsIoZZyrTzlJMytI7AFndjzxwMCrHg+TfewyBgcxxgY/wB0f/qrHGO0SsHrUR9u/soWn2/wbdWuc4Xj8q8B/aR0+TQ/Gs90Ex5V0r5x2DDNfQn7GDx/YpbduPMiH8q8t/bF8MG38QX0iRn5lY5x7V8rTrf7U0z6upQvhE7HmPwN1yfwp4xDW1qbm5S9KWdovBmctwM9hnb7YB6V9D/8FR9G1ax1v4UfFLUre3S6vfB+nG9e03GHzUj8iUKTyQCg5798HivnLwCUsvHcd3jh2WVQe+8Z/wAK+wv26tLHjn9gvwJ4w8oSy+H9QudPZh/DEVSZB9PlcfjXl5lVjTzSjO27s/RnoZfSc8srR6pXXyPlT/hM0/5/V/M0V5t/aR/5+RRXX9Ro/wAqPH+u1fM+m/2p/h54I/ZJ+MFx8G/AXwruBb6SuRq/ix1up9bycfboxEfISBwp8tIwwAJDMTmuGj+Lfim8ulbTrDT7EOcqdP0mCIn6Haf15rzLxV+0H8Q1t7PTfGGu3WtabYkvZxXkm826Njd5THLIpxnZkqSOcH5j2Pg/U9P8SaCPFNjMn2J4t5mY429thAJ+bPGPxr3MywVTKbJNyT6s58tr08y10T7Hqfw38X/EJPE1t4nt/Ed7K9g4mQvdN5e7t1GBg8+2Ca7rxf8A8FOvjR4a8O3fw30zxxe31pKMX73dyTE+NvyYUjK+o4GQDzXiniP4mQ6H4Xh8OaJOIXuVDXJHEjDaOWPuMcV4h438TMlyYIHyW+V8Nztz0+pr5OOULOsS62Ij7q2ufXTzZZRhfZUH7z3PoT45/GfxH47/AGD7iXWtUklk1z4k2ek2sTvybLS7J7gqOwAlvozjGOV7816f/wAEw/Bxj+IFndSxklNPjdmx3wOf0r58+Mcw0r9lj4G+DbiBkm1TT9e8ST56ubzU/ssbY94tPT8MV9m/8E2vD/2e/v8AV51QC30+JY9v8I29M19/luFhg8KqcNkfEY3EyxmNdSe56z+2L4ziTRLjT/PGDCwGDznaa/NX4ratFqWsRPncBpUCBSM/dLg9ux6c8Yr7P/bR8WMlzMiSdGyce1fBHj3UZYr6KRySkQKStjOMkEcfXJ/GvSWx5+IaWh02vfGb4ieIvh5p3wtvbvTYtD05rfybTTNCtrRp3gWRIZbiWNRJcSKJpRl2wS5YgtgjD0D48/Fj4d2suk+CfF2saIsp/wCPvQ9RnsrqMlkYqs0JVmj3qWMMm+MkBgFPznOjcz2ZfzyiAcuGHAwTwSD2wMdee9dB4F8TaJ4W8A+IbzULaW4nS+tYYRoUG3Ubp3BEFlFcbGFvEWR5XeNTKdqouM5EShGT1OZScdjyD4u/F74mePtfTxN468e+Itc1GCLybbUfE+pzXV1BH2VGdj5Qzk/LjGeK5bwxqWv6Hqdtf6LdyWt1BcxXFtcRYVopI2DI6H1U4Yc9e2cEd14n8Z+I/s2oafetfabfWjRSX+nXeoSXccy5XazJOWeORcrwSdwJxtxg894s8K+KtGZNc1mxWAagvnjymiUOGAIO1CdoIwcfyORVaQjZEayd2bvxD+Lvj/4oQWP/AAsDxVLqUmnRyrZB44lWEyy+dM2EALPJKzO7NlmY5YtgGtDwLZvDFZFicmJTz15Yn+tef2ePtG4nvgn2/wAMfyr1HwpBsW0iII2QJwe3fH5YrzcbL3TuwUVzn2D+xzqIN7HbhgMqAK0v2u/BC3FxLcNCWDqxOfpXPfscxf8AFR26HvgAe9fQP7UXgVxotrfyW52TW+Q5H8vxGK/OcbjYUMck3Y/RMLhJ18A7K5+fyRTaVrelzrGM/ZYxknrtYqf/AEH9a+0dRjHjv/gn74j8M8M2nT2uoQr1IUq8ZJ/A18teJPDP2K2stRuIsCK7vLbjoCrRuv8A6Mr6l/ZWkn+IHwZ8c6HcRKv2zwhKsMEXT9xGGXj1JBNcWdYlTo06sXtJfmduUYX2c6lOS3iz83Ps1x/z7/pRXrX/AAri3/54H/viivpv7VoHzX1CX8p5h4A0pviJ4RudLOGudPJWNic742HB/DgfhTfg74k1Dwxq2p+AdTLmN2kuIoJCcCaIZfj1ZAfxUDvV79k65WH4gto92AftkLR7WHcZZRj6qRVb9o2yufAvxZi17TY/LZjHdRZ6GRG5H4kYPrk+tfpmNw8MVgGpnwODrVcPiuaOhU1/xpd3GtyvJcF9jFE+bge1YOs3UsqNdufnCk5H8PBwf8+lS+J9NisNakjtGLQSIk9mf70MqK8f5A4/A1b8G6CvirxNpXhmWWNF1LVLe0d55hGgEsqocsfujDHntXzsKUKSSie9OrOrPVnq/wC2PLdeH/j74Q+EpuWaLwj8P/Cuki3LEiGZtNt7m4AHQEz3EhI9TzX31+wde22j+Ata1WchQFSMsT7Y/pX58/tQ3lx4z/bd8W+MLhYjHc+N7prW3gvoJWNvFKYoVXy5GU4jhUcE9D2r7P8A2U/i7o+kfDufQp/h34zme7kJkubbw8rQZGMEyGUKP/r160ILkOGEk6zuY37YGptfzzT27FlYE9evFfGPi/UWivpd2ckEk7vwr7S+O/hTXPFkUkthNo9qshzHHqnizS7RlHur3ORXyp8Q/wBn/wAVTXzrN8R/hnb5JBW6+KWkKR+VxTtYwryjcvaBdfDPQpoJ28G2161oN8kM9snlzkqv3txyQDk47+tcF8VNUOt6rLFpunwaZbX1zbSyR6Jp/lLBLDlUkjSMHaQHbOCC2etanhz4BfE/V9Xs/Dmi/GL4eT3N5cLDaW6fFbTP3sjHaFDNJtGTgZLDr1q1ov7L37QfjfTP7Z0LRL6/tWcrHe232h4pGDEbo5FTDDKnaynB4IJ61hWrUqHvVJJBRo1MRpTi2eRJ4dvPDhfTpGea5uwu9Y4XKxR7kcDJ6uxwSOduCCeTVvxLYadd6rLJ4W0q+issIsKXIDSKAoByQoyMggDsBXba3+yt8ftDm8u58M3+WPyognBOcfKBsOckjI6k9OmazrD4Q+LLq/vdOvPEWhWF3p0/k3sWu+KbbT2jmwSU23bR5ZcYYDIXIzjIznHEUcT/AApXLnh61Be/GxyemeHry0vVutX0uWO2zucyRsA49Onfj8K77wXOb+9jZgMlskA5x7Vn3fwj8QWgKS+O/BLgc7E+ImlyH8lnNdB8PPCd3bapHDNqWlTEED/QtdtJR+ktcmPjOFJyZ1YBxdWKPr39kHw4/wDbtpPHGcZQgqPzr9CPjR+znN41+CvhXUVRrdRHc/a7rb/qokw276jPHvivl3/gnd4R0S41eyTUPB2tak+5QItO+wMW6f8APW6Sv1H/AGhvFXhLR/2YLDTh8EvG2n/ZY/3N7MmlHk/3wL7kA4Pp8ozjqP5y4uxuLr4ufsHbkV9euuyP2nKnTwVGjGUXJVHZ26K25+Gn7RuhaHo13qum6TZeRb2Xix0tY8g4ja1jIz9Smc/7XtXqn/BPbU4IdfGgXDkR6hb3FqwbnHmQsuPzrl/2m/g78UPF2s614k8F+AZm0/UtWt5bKeTWtKVC6wsHQsLwqGGVbGST3ArnP2XvignwW+KVhb+OtHlLW99HK1rpupWl1M4H3gBFOy55zgsK990sTi8jUo6ystPuIjOlhs1fPpHUrf8ACCRf8+f/AI5/9ait/wD4XD4K/wCgVrv/AIAxf/HKKz9lmBt/sR8R+DkPgz9pW7sLciNbTxHPGqjjAE5x+mR+Neqf8FDPhvDov9neJIFHlz5CuBjCuNwI/HJ/CvMPH19pFp+1TrmuW92jWT+KJLmG5UEK8TSKwcZHKlTkH0wa+lv+CgraH4m/Zj8JeL9C1OzvUaKCGSWzukmVXCLwdhJB57gGv6ZhyujJH88pWnoj41eWW58KaHqEk25/LmtJNzdPKfKj8FlAHsoroPgtb/2p8XPC+lkBvO8QWo24yDiRTj34zxXM6JbyT+B135P2fW3IIP8Az0hGf/RYr1D9hzwSPHX7Xfw/8MXEjRx3Ouh5XUdFjikkP/oNfPT5OaWux7lG9onM+A5P7Z+MqXWxctrM8hCoAF3M7du2DjFfe/7OwisPg3cxHau68k5zwenb8K+CPgVDGPipCiNvC3khDN/s7xX3Z8K7tbf4RTCOUA/bJc813x+FHNB+8zyb446lBJdyA7cA4Axx19K+a/iG6TXDbepI6GvaPjDqshvZct/Ge9eG+JZhLct5mDlvWmc1ezdzov2LPAMHxM/a7+GXw6v4Vkt9Z8YabY3aSDh4Z9QhgkGQMglHYAjkda/Xfxj/AMF4/wBn74b79Auf+CY3g+SLTgbW2YeKpiBEnyKoBhJA2qo2+1flV/wTzjv4/wDgoH8DjpeMn4saBG6f3kOowFv0FdJ+1fK9rrkx3k5nYn/vqsatCjW/iK5VCtUpRvGTR9x3n/BW74Z/tf2XjX4WeCf+CffgHwTMfhr4k1OPxZZ6hczX9gbPTpJleBiQEl3KoEmPlGSBkCvyZ8f6nfDxRqvmzSMs2prMxZm+Z2jYlzu5JPXd3r6H/Yd1hdM1z4kawF3G2+AvjMqp7F9PSMH82r5Y1zxDfa9fT3moyb7i5nEsrhcD5VKgVzUMPGliJOCsrHRXrOeFtJ3ZdsbszSDzSTzyCSa9A+HbRwX0cu0cMOCOP1rzDTZiJt3QE813HhDUnilVjJjkfjWuKpupHlMsLNU5Jo/QD9jz41y/D2S3bR5FS6lZV81ukY46e/Nfo/8AGz9oGPWP2MdGt5r3dJF5kUgJBIJG7Jzwfp6Gvxi+CPiqe21GGVZcYxznGK+wPFPxy1C5+C8fhNpCEiYSjJ5JC49fevxXijhiFWt7WMdb6n63kGdRnRUaj+HVeTPnfX/H4gsvHHhGO3Hlf2pp+rW6ALtVyssDkcc7t0ZznjbXjXw71ea1+Jlu5fP785O7knBGevrmut1vVBeeOdfiSQYm0IFRnulzE+PyzXEaDAbP4jWc68gXig+4LD/Gvdy/DUqFOUVu4r8jgx+MqYivDmeiZ1n9pz/9BGT/AL7NFdj/AMIXoH/PBaK4/rdA9X6piu583fGr4jDxN8ZNaXVNZZRp1wNKt57xPMSWO2PkjdgZVW2bsYOM9utZ3xK8MJoGg6LfRaBbv9rh864vNPvTIuCUKFoigaE4IxvHOeCa469nk8YfEG5urO2eaTVNWlkWJVO5/MlZtuMHk7hwAT7Hoeo+MPij4lajLa6N4+1W4uvsthF5IvIuY4CoCIu6MSIu1BxkjvX7ZGDlBu9j8RVSKfqafgzQ9P1vwcP7A0nVQovwL6a5iD26S7MKiyqPvEFyVYA+x6j2/wDYZ8L3nhD9pnw74wewdY9Nt7+cSEcKRYThefqRzXkf7Jk3iLWb7U/DMOsXcelvJbz3Nks5WGW4UssTso43KrSAHGQGOMc5+/8AwB+yN4g+HnwjuPjre6jG0P8AYk0sMAQj5ZIigOfxP5V+Y8Q8SYXI81hh607OpJJerP0jh/JKuZ5ZLERWkE2fnD8HL1tO+I9vNxlpHJ46kg5/TFfZHwp8RCT4UMol3b7uQmvi74dQsnjGymOfvuQCO3lZ/rX1H8EtW3/C97Z3wy3cvU+9focU1FXPiHdTl6nBfF+4JvMFQNxJrxbxDOTd7T/e7fUV7B8XJA2pks42+X2PvXjHiRis5Zcfe/qK0STOWruevf8ABNGVLn/god8EIXfgfFHRmx/u3KMf5Vp/tdMf7YZVYEZOOO+c1k/8EtVW5/4KQfBWLGSPiHp8n02sW/pWp+1fOsmq70Od6gj8QKlxTYo/BYr/ALHLOlp8XZ35EfwF8UY/4F9kT/2b9a+Z2CvdEbcNmvpz9kuBotB+Mcw6L8BfEJP43Gnr/WvmOMZ1AnP+cCs6fvTaLrK1JE0KGN8nB5rpvDUxZl3dumK5wp8+Titvw5IqShiRwR3rRrmM4vlZ7j8OdVj0Oxm1eWYKILcyAkgYIHA54P0rmvCnxb8QSfESzdtRlIu7gpOTITvUngEdMD2rH8TeK/7P8IjSrSTEl1IN/wDugVyfheeUeM9Nl8w4F4gUjtzxXl4vCRnGXMtLHp4bFTpzSiz2mPWS/wAQ5Y9/+t0WdeOeg3D69K2Ph/4A8cfEj4maT4O+GnhDUde17VLoR6Ro+k2rT3F3ICMhETlsAEk8BQCScKa4i01XT4fi1E2qaxbWECaZJuuLm4EaLujKgbjwpLFcdee2M19ofscf8FMfhX+wf4D1HUPBHwN8GeIPG2tKsOoeLNE8QXMktppaCMRWMOId0WG3yTOh3SyOSx2qqV8nVwOJ9m5UY3fLt3PqaWMw/LapLqVf+HfX/BR7/ozDxt/35h/+O0V0n/ERSv8A0bzYf+FBdf8AxiivC/snO/8AoEj956v9r5d/z/Pyt8L6dF9rW/fXlspreVfJzGchwVxk5AQcgZzwfQc11HxOk1h7/wA7V7a1iS4LSW5srlXiEa4QImHcqi4KqpYkKvGRXK+EvDnibxxrlt4J8HaLJqGo6ncJHaWlumWdsHvngY+ZieAASSACR77+zD4A/Z7+Dvxd0X4h/GX49fDzWo9AukvH8LtYahqNpcXMYBjjuGjhWKaNX5YI7o/l7csrHP7HCLnPluflLdo3sfQf/BPb/gkF+298T/gjH8Z7T4dWPh7RPEF7BdaFc+LNR+xyalaorATxxbWk8py5KuyqGAyCwwa/RFf2YP2mtV/Y9uv2fNc8JaDL4lbSBY2moWHiWP7NOVI2s++NWU7Pl4U8GvAta/4L3X985uL79pfwaFwAqjwhq6qFC4H+rBHQYwOwHYEViL/wXkt0cyH9oDwLcEHhH8N6/Ere2fJYY/L614GccDcOZ7ioYjFpuUJKS8mj2ct4qzvKsO6WHaUZJpryZ8l/Gv8A4Jh/tCfsT6rol/8AH/xR8O7B9USaXTbS28bRS3E8agRGQR7FKx7yEDNtUtwDxUPwxs7zRvBc1peRtDILhyVkJHBOQfxzx696yP8Agon8aPi7+1RpenftMeMp4Lm31/U5rbU00u+jurPTREiiwtFaMH5BCZJVDciSSbKq1cL+yV431W6TUvh3qV20lvHZm80xJGJ8ooQsyKc8LhwxAxgqcCveqRhHSGx5tKrJztLdl/4rzlr1mB7H2ryDxHKFkZie/rXqvxPkbz2ABOCeo5/GvJ9dw5ZiO/pUx2FV3sz2j/glLC7/APBRr4SSKeYvFPnfTy7eZ/6Un7St2JdThTO7dAnOfYVZ/wCCS8ay/wDBRP4blv8AljPqc4Pp5elXj5/8dFc38ftUa41mCIAHEaYOefu1nJ2mOHw3O5/ZStP+KB+NdyByvwC1rn632lr/AFr5UmK297uk+7zuI+uK+sP2V7xYfhR8dZFABHwJvY1JPQyazosf5nd079s81zX7MH/BN/4vftX+LtJ8N+DfFWhaCLrFzruseKr1bLT9A05yRHc3Vy5A3ykEx26BpZByBtO6uWjUjCvJPudValUnRjyo8J07RNS165Wx0PTbm9uShcQWVs0shVRkkKgJxjucDnrUscV5ot6bLUrGe3kH34biJkcf8BYZHHfgV+3s/wDwTR/YO+D3wOT9nj4CftXWukal9kW68afE5Layv/trogklutV8u9jl0zToc7Y4YRJgNukMjnj8mdd8K6l4w+Kt58NvB+o2vjCxi1Oa2s9YlR7ezvYEl2Ldq8w8y2jcAOCSrAOCR1Fd0byRxONmeSarrUupXoVn/dxgBFB75/Lrj8xW14F0yfVfFemafbTJFJLeIPNkbaqDqWLdsAE+uOxqx8XPgt4r+Fvi+Pw3qmnzO91IVtI8eZJvD7HgyoAdlZgAyrtkUoy4D4r6P+D/AOz142+Dc2ia14m0W60m7uLds3ek3tt/ad1dkKzxQybz5SwoyrIECuHDF2KkrXLXtNcp2YeMk+Z9Dz/wT4Q0fx3Yy/Ep9d0Cwh0iVo7SDX7Z53vrgnIljtkG+WIR7FHXBJbGawvE3xk1nxx4bn0DUdasp/LCfZLWz0praOReMmNuQpwMbGVD2FdD8T9d8K6brV34fuvjRJI9wwU2d3bpqcNu/wAu8+bKqhW3A5weo69DXGa78Fdb0rwoPFNjFpl/ZxxmYyWzbbqGASLD9plhYNthMp2biSAT6VdOlGnT3M5VZVZtx3Zxv/CT23/Qsv8A9+U/+IorQ/srXf8AoIzf+BS//E0VpeBzfV5djqv2dNCto/hR4x8U2ci2+qa9rWkeDNPugmWt4tQaeW7dd3QmG0MJJPKTyA8GvZfHWmeAdJtbXRvD3gzSLaws8W1h/wASuNnbbwoZtpaRzwWLHLE9OK8y+D9l/ZPwD8GPPAANa+L95c5x1jsLC2APvzdvj3zX0N+yN8ZPFvw5/aY0nxj4S1g2UmmaBr99qt4Ikd1srfR7uaYKzKzIS0aYZdpB6MM19Zk8KUMJOrKN9T5vN3WqV4UqcrdzxPVPCOk6/pd9eaJ4Shml05BNfRW2imXyLYkhrmVkQrFGr7VLuQgLAZOCB53rWhaDD8smjWisRzH5SKx/QHt2x169M/Wv7M/xW8efB3xL+z98LfAvjS+0ew8SWyeNfiV9gvGi/t0TXN6hhvSu37TbRaZY+X5MmYwbm5bBaVifnC6+NXiiL4Ln4K2OnaXbaTe+IIdbu7hNMjF5LOkBhiia4I3iFAzssIKoGYsc4U16CVGvTa5EccqVWhVXvsf8JYLmy8L33wg0+aSa08beFNRubiydiV+3QzXn2SRFUZDLJYxDIHImfPBGOG/Z08Y6b4d+J2k3uqwbUkufs87pLtCRyoYizf7oIPOOh9qni8Va74T1rSfEthbXM503w+sTx2sxR1W5S8O4MAdpBnLZx3rC+Jet2niz4h3nihUs4WvIoXu/7Kt2aF7ryEEjqDjcZHBdyABukbAAxXx1SP7ySSPqlJOEX1PW/jRay6NrV3pWoq8F1bXEkNxDIOVdXKtnHHUY4zXkevMmCVbPJ6H3r0X4kfELV7u8eDxHeBtU4OpOPuiYqC/BBIy2Tj3xXm1/4i1NpGMkxRc9SF5/DFcibuzqq2sn1PfP+CR9lLL/AMFBPBtykRYQaJ4mnOO2zw9qT/8AstcJ8d7S5XxZDGisGMMYwBnLEDGAOT9O+cCtv/gnv+0Hb/AT9r7wj8VfEfg6+8TaPp41C21/R9LnEVzLpt3YXFldvC/QSxwXEkibvlLooPGa6f4jeG9J+IcNx4z+Duh+LNX0uK/NnH4hXQ0tj5aP8oiPmuIpmiKOzZYKThSc5rOTfOjSEb0LmR8G7j4keE5fEvw00ObTdE1TXtKi0jxPJ4peGFNP09p4bl1aO52mSSR4oMIEYqinBG7I6b4l3o8M+E49D0P4t+H7++3Ge5mt/DSTvLIwXfM87TSS7zgD7owAoAUAVwvifxVaaRp9tN4T+FFpHfIN81xrOqHULi5Dbd4O5A4cnnqoHZR3898R+NV1yaJrrwHHYxD/AI+fs7ttPQE8g45Pc/lTjQgpuT3G8RUUORMs3HjTxq6vHp/2e63oY54LGR42ZOB5YjDcqcDOASTzxjNXNA8Y694T0m28cab4h1nRXGoJb/aYisqh9v8ArChwSgAI6Z6jOetTwV8PrF/FMUkLzSFFBhtGgVDIDtALsflCgkcnjIAJGcn1DS/h143ufCd/r3hTwppviUQzxfbrGO8SZDsUNtUY/wBIdSOUB4OBnOBW+tjm97Q7nw1rM3xT8d+H7T4ifEPwv4Z1xbQpp/jB53Nk8LIgN7buhBhvkiG1RLtz99drKlc7+0D+0H8G/Amj3Hwn/Zy0xV0tCYrzX5EAutUK/ecsqgQwblZkgTCgklmdiWOz8LPEfwT8ReCWt9a08X81xITrD3yhJ1uBjIYIAYWXbhdnPyjj7wPmHxf/AGddH1XVJL74e6sJsksY3CRT57b0O1XJ4G9Np4G6Msc1CpxUrm86spU+VHhus3cmoXDTSvuLfMeeg7H27fWvqz4ZWMuv+HBpDxvLJqPhL+zbhBHyBdCedWIAOMMkX1yK8O8KfAXV7rWkj8SLcyxrKM29pYSo8pz0LzLGiDPGS3r9T7Z4ds/G3g3WNQ1/Tb20W2mW1udQsomYNbWkA8vYJCMKhSRlyeSFwDzmorqTjoPCWjW12seS/ZdR/wChM1X/AMBT/wDE0V7j5Hwz/wCh4/8AKcf8KK4+WR3WXc4HTboWHww+D/h9xhodG1vXZVBwVe41CS2DfQpYoR7e1es/CX4T/FfWfCmt+JfA+qeEP7W8c+B9f0bwr4a1rWWt9V1m0VVF7c6fCI2SQ7be4gTzJIvNdZki8xkIryD4rRHw34g8PeHE5bQvhn4fR1UZKtNa/b3XH+/ck9sH8a+ivB5g8HftA+EfFlykkehfCT9n7TvEOo3YbEcfm+G2uYQCwwpuNU1WGFCerz/xGvt8JNRwnIj4nEqMsWpnG6XH8bNF/ZZsfE198NvDEXiCz+Hlxb6Jq8+vP/wkVv4FnklWW6j03Pl+UzXU0KXjYm+zTPtjeNVmTzb9qb4FeH/2fb/wlo+mfFvQ/FV3r3gqy1/U00HY8eiy3G9lsXljkdJZBGiuwUgruCkDGK92+Pn/AAqnwUvxs8HaV4a8URfEr4e/BjRfBOv6zqesWk+jSRWc2gaLPNaQJbpPC0oX935krgI7H5t2F+L5vNntVs3gaIvEFijMew4bABwQCM5z7gg9MVrQrSi35CrQjLlO7t7a20/QddvJwFMXhu2iO45wyaZBkfg8p/GvPfANrHqN9FbhBh5VQ7QOhPIA7c9a7r4i3C2XhrxbJbuFSXUL6NMnGVF1HAgHr8kX6Vxvwo01J/EVhGmoAOblZJ02FliiT53djgYwB75z0r5upVac59EewouajTW4fHPTE1H4jeINYstWs2zqk3m2zSBGTDYz82A3TsSfasLwX8P9Q8V3Ft9q1G10uwnuhD/aeoArDvJA2qFUvI2CDtUE9+ACa9o+H37O1t8Vfihe6td6potlo8DNPPdeL/EqaZaTzsQfJa4IJ6sCyIN+3OMdR9LXX7K+ifDb4d6V4ph+PPg/VNW063/dDwrolnf6fa5Kt5cMvm+b6ZdtrMR36V51LExqq66ns18DKlKzPmb4V/D3wf4Z0TWtJ8S+OdHsIr+ZIJLURxXt5cQoySAyOG2QIx+YRqC2QFc4yGu+PPifYaMZrKSO9vLCW3CSTabcm0J+4PmgBVB0GOMA8jOKofGXxdqVxcR2eo6Da3DI6hb+zzCdvGRgjcOg4JIPp2rzn+xUu9bj1W0mkxcHK27xKHRiNpDDAUjkZJA4I9K6Ul1OGUnHRFe0hHiCC4ht7vUoki2v5M1yxBjyBuJAxuAzlsYABYk4rrfDXhKHw/pFh9s1Ey290rSRXMKBnR1K/u4VP+sTGMs21PmB3E8VS8Kz6ZBcXBR7WdVMICxRbo42G3DN3cZ5252jHOeBXSzRRC1M6OsxnUAXTne0qjaBnGCduQFUYAHbirtYz1Oi+Dfwz8QfHTV9U0/RI4dJ8NeEfDtx4h8XazK26LSdLgC+bcTMRmWeR2S3hiP355o40GMmvZfgnPpq2muW9j4Wi0W2bUorqDSYZ3lW18yBf3XmNy7qFXLk4Y9MCuv8Q+A4PgP/AMEj/hXbaLamLVP2jfibq/iLxTqAb57jRvDkq2mm2JI/5ZfbJ3uWHd1BI+UGvJdC+IGk+ELO/ivYZ2luRA9pLEg2fJlZImyMjgq6kHGdy7eQQi15mX8ffh7aXmsS+NvBU8dnrSgi7O4eTqKj+GUdC3o/Ud843Dxi48a6zbLIsjyQyRk+dDMSphbjqW4OOOc4OR616x4z8aarrCbkC2MLfde9JLsD2WJBuz0H8IPY1geFtJl1rxJZW3gbwvPqniK9uEt9Kl+yC5up52bCLbQRqymUseDh2GcDB5ATdt2Rm6QnxCbS4dY8V66+h2FyA1pJPEG1C6TjH2aD75Ujo8myLnOSRg/eX/BL/wD4Jd+OP27BY+PvilpF54Z+CNleia7ke5c3njGZDh4IZDtMwY4Wa6wqRrmOIbicdd+wX/wRv8Ow/Em+8Q/t42V3eeKdIg0zU7r4YXTExrFerO1pLqVyJCZmcWs+6zjKlAF81yT5dfq/ofiqy0bQ4dJskhtba0tkgtra1jEMUUUYCxokajCKoACooCgYwPV8rZ1U6UmiH/hTX7IX/RqPwz/8EMVFVv7dg/54P/32f8aKORGvJI/l7+OviDV7H4nS+KvElmY7LxDo+nX2hTxDcr2K2scNuy84JURNE68FJIXUhSpq3d/tc+NNV+G2lfBG++KOqXnhSwETrolyimANEXMEZcIJZo4jLIYopSyRGVygUkk0PANpa658CIBrVtHeCxvp47IXSCT7OjKjsqbs7AWJYgYySTXkfiOGK212WO2iWNQ64VFwB+Vd9HHVaVkkeDUwdOqm22fRHjn9rfW/jF4FHw9+Mfxe1R9JtbK38lLDQ7Qz6k9tGI7RL24RUnu1hQlY/Pkk8sY2gdK5vXPjLrH7SPxW8MXfi1bCI6ZZWdjNcRW3kI1nZqHLydt3lx4wODwMZrxi8AHlgDHyP/KvqH/gmzp2nvb+JNbewhN7b3FotvdmIebEC6khX6qCQDwe1Vic0rypNJJXHgsqpOvCUpNtbeRW+GP7DH7X37UXhR7nwv8ABbUbSwa6kmHiDxFImmWK+ZOZXO+42GbBYACNXPzHjivevhF/wTY+B/7OULeLP2hPi2viXU3t/Lm0bw/I9pppBKlo3nIWW5G5RwgjXg9RkH13xd428Z3ng1Lq78XanLKIVxJJfyM33mHUtnpx9K+V/i3rmt3t9cm81i6l4/5a3DN/EB3NfMyqVa8nBvQ+qjQoYZcyV2en/FL9tXwR8P8ASZfBvwssrLS7CNSkVrp9tHHEBj+6o69snJPcmvlLx78V4vFV62pWVrHbXLtlbixAhlJyOd0ar+RrkfEju+ofO5PHc5/u1moiG3JKg4yRkdDuruoUoUo+6jzMRiatWfvMtLrWtahfql3qXm+e4HnSWieZ2PXGSfTPetCW0uJmeG+uzJCsYmy4MayR5AfgEDIzn8K5pJpo3JjmZcgE7WIyRtwfwrtdEjjfTNSLoDs02LZkfd3MgbHpkEg+uTW25yFa20g2k2+3uEinjIVJVXKhcDKsAMMpHUde4q/Y309oUtriPyJmO5bWRhsmwFw0bcB/bByOhGat6TGgucBAP9IA4Hbco/lxVnxXDF/wimqt5S5htPMiO37jh4wGHoQDwap7BsfefwrtdQ/4KC/8EmPDfwQ+CumSa18Xv2V/Eeq6vb+CrJA174h8G6rIXuZLRCMzS28+zfGo3YiUcmRQ3wt4i8daa2qDSrCRzdM5i+xiIicSDA8vywN6up4KkZByCMive/8AgiJrmt6P/wAFZvgZNpOsXVq9340a0u3trhkM1u9jMHhcqRuRgBlTwcDIr+if4rfDH4bafpsnxOsPh7ocHiW5hiNx4hh0mFb6Uk8lpwvmN+LUo2aNox5z+ff9lj/gkJ+2T+0ulv4t8aaVb/CrwfOA58Q+OreRb27jP8VtpwPnyHoMyeUh3feGK/SP9kb9mn9kD/gnJFNqnwo0q78ReMpoTDqXxD8SMjahsI2vHbKvyWEJ5ysWZXBAeRgcH0TxRqWo3NncX1zfzSTyPJvmeUl2x6knJqP9jbwv4a8e/HNNJ8deHbHWrUNxbataJcx9P7sgIqlE6FTjDY434FfFLVfjH8bviL8UvDemz3dvrWv6do2j/Y4DJ5trpFkYZJECKQVa7ublQRx8hwCOT9J/8Kd+JsVnHf8AjH7J4YtZRhZ/EN4LXeD/AHUPzucdgvrXs37VVra/Bb4V6RpPwcto/CdrHAIY7bwygsI0j2g7AsG0Bc9ulcL8FLa31PwdceKdSt0uNTaPLajOgecn1Mh+b9ad3saqTTOR/wCFaaV/0WPQ/wDwT3//AMbor0v+1tV/6Cdx/wB/m/xooK5mf//Z"
+];
+
+const pcOffers = [
+  ["Placa de Vídeo RTX 4060 8GB Galax","R$ 2.299,00","R$ 1.999,00","13% OFF","Mercado Livre","há 13 min",0],
+  ["SSD NVMe 1TB WD Black SN770","R$ 499,00","R$ 369,00","26% OFF","Amazon","há 27 min",1],
+  ["Processador AMD Ryzen 5 5600","R$ 799,00","R$ 649,00","19% OFF","Mercado Livre","há 41 min",2],
+  ["Memória DDR4 16GB 3200MHz Corsair Vengeance RGB","R$ 448,00","R$ 319,90","29% OFF","Amazon","há 58 min",3],
+  ["Monitor 27” 144Hz AOC Hero","R$ 1.299,00","R$ 999,00","23% OFF","Magalu","há 1h 12min",4],
+  ["Placa-mãe B550M AM4","R$ 699,00","R$ 529,00","24% OFF","Shopee","há 1h 24min",5],
+  ["Fonte 650W 80 Plus Bronze","R$ 459,00","R$ 349,00","24% OFF","Mercado Livre","há 1h 38min",6],
+  ["Gabinete Mid Tower Airflow","R$ 429,00","R$ 299,00","30% OFF","Amazon","há 1h 51min",7],
+  ["Teclado Mecânico RGB ABNT2","R$ 289,00","R$ 199,00","31% OFF","Shopee","há 2h 05min",8],
+  ["Mouse Gamer 12.000 DPI","R$ 199,00","R$ 139,90","30% OFF","Magalu","há 2h 18min",9],
+  ["Water Cooler 240mm ARGB","R$ 599,00","R$ 449,00","25% OFF","Mercado Livre","há 2h 31min",10],
+  ["SSD SATA 1TB","R$ 399,00","R$ 289,00","28% OFF","Amazon","há 2h 46min",11],
+  ["Memória DDR5 32GB 6000MHz","R$ 799,00","R$ 619,00","23% OFF","Shopee","há 3h 02min",12],
+  ["Webcam Full HD com Microfone","R$ 249,00","R$ 179,00","28% OFF","Magalu","há 3h 17min",13],
+  ["Headset Gamer 7.1 Surround","R$ 349,00","R$ 239,00","32% OFF","Amazon","há 3h 33min",14],
+  ["Notebook 15,6” Full HD Ryzen","R$ 3.499,00","R$ 2.999,00","14% OFF","Mercado Livre","há 3h 49min",15],
+  ["Monitor 24” IPS 100Hz","R$ 899,00","R$ 699,00","22% OFF","Magalu","há 4h 04min",16],
+  ["Controle Bluetooth para PC","R$ 229,00","R$ 159,00","31% OFF","Shopee","há 4h 21min",17],
+  ["Hub USB-C 7 em 1","R$ 249,00","R$ 169,00","32% OFF","Amazon","há 4h 36min",18],
+  ["Kit 3 Ventoinhas ARGB 120mm","R$ 219,00","R$ 149,00","32% OFF","Mercado Livre","há 4h 52min",19]
+];
+
+const reiOffers = [
+  ["Fone de Ouvido JBL Tune 520BT","R$ 299,00","R$ 189,00","37% OFF","Amazon","há 18 min",0],
+  ["Perfume Bleu de Chanel 100ml","R$ 699,00","R$ 499,00","29% OFF","Magalu","há 32 min",1],
+  ["Smart TV 50” 4K Samsung","R$ 2.499,00","R$ 1.899,00","24% OFF","Mercado Livre","há 47 min",2],
+  ["Tênis Nike Air Force 1 Masculino","R$ 599,00","R$ 419,00","30% OFF","Shopee","há 1h 05min",3],
+  ["Furadeira Parafusadeira 12V","R$ 599,00","R$ 399,00","33% OFF","Amazon","há 1h 12min",4],
+  ["Smartwatch Bluetooth AMOLED","R$ 499,00","R$ 299,00","40% OFF","Mercado Livre","há 1h 28min",5],
+  ["Caixa de Som Bluetooth Portátil","R$ 399,00","R$ 249,00","38% OFF","Magalu","há 1h 43min",6],
+  ["Aspirador Robô Inteligente","R$ 1.299,00","R$ 899,00","31% OFF","Amazon","há 1h 58min",7],
+  ["Câmera Instantânea","R$ 599,00","R$ 429,00","28% OFF","Shopee","há 2h 13min",8],
+  ["Air Fryer 5L Digital","R$ 499,00","R$ 329,00","34% OFF","Mercado Livre","há 2h 29min",9],
+  ["Mochila Executiva para Notebook","R$ 299,00","R$ 189,00","37% OFF","Amazon","há 2h 44min",10],
+  ["Luminária de Mesa LED","R$ 159,00","R$ 99,00","38% OFF","Magalu","há 2h 59min",11],
+  ["Kit Organizador para Casa","R$ 129,00","R$ 79,00","39% OFF","Shopee","há 3h 15min",12],
+  ["Massageador Elétrico Portátil","R$ 249,00","R$ 159,00","36% OFF","Amazon","há 3h 31min",13],
+  ["Liquidificador 1000W","R$ 299,00","R$ 199,00","33% OFF","Mercado Livre","há 3h 47min",14],
+  ["Panela de Pressão Elétrica","R$ 499,00","R$ 349,00","30% OFF","Magalu","há 4h 02min",15],
+  ["Tênis Esportivo Unissex","R$ 399,00","R$ 279,00","30% OFF","Shopee","há 4h 18min",16],
+  ["Mala de Viagem 4 Rodas","R$ 499,00","R$ 329,00","34% OFF","Amazon","há 4h 33min",17],
+  ["Kit Ferramentas 110 Peças","R$ 399,00","R$ 269,00","33% OFF","Mercado Livre","há 4h 49min",18],
+  ["Fritadeira Sem Óleo 4L","R$ 399,00","R$ 269,00","33% OFF","Magalu","há 5h 05min",19]
+];
+
+const cats = [
+  ["Placas de Vídeo",pcImages[0]],["Processadores",pcImages[2]],["Memórias RAM",pcImages[3]],
+  ["SSDs",pcImages[1]],["Placas-mãe",pcImages[5]],["Monitores",pcImages[4]],
+  ["Periféricos",pcImages[8]],["Notebooks",pcImages[15]]
+];
+
+function card(data, images, rei=false){
+  const [name,oldPrice,newPrice,discount,market,time,img] = data;
+  return `<article class="card ${rei?'rei-card':''}">
+    <div class="card-img">
+      <img src="${images[img]}" alt="${name}" loading="lazy">
+      <span class="tag">${discount}</span>
+    </div>
+    <div class="card-body">
+      <h3>${name}</h3>
+      <div class="old">${oldPrice}</div>
+      <div class="price">${newPrice}</div>
+      <div class="meta"><span>${market}</span><span>${time}</span></div>
+      <a class="btn ${rei?'gold':'green'}" href="${rei?'https://chat.whatsapp.com/DEU5Gi2lAoM9rU3NfdZ9bI':'https://chat.whatsapp.com/FulbcOKDIrKEQG0Wxs2DRh'}" target="_blank" rel="noopener">ENTRAR NO GRUPO</a>
+    </div>
+  </article>`;
+}
+
+function warningCard(){
+  return `<article class="warning">
+    <div class="shield">!</div>
+    <h3>NÃO CAIA EM GOLPES</h3>
+    <p>Nunca enviaremos mensagem pedindo senha, código de confirmação, dados bancários ou pagamento para participar do grupo.</p>
+  </article>`;
+}
+
+document.getElementById('pcRail').innerHTML =
+  pcOffers.slice(0,10).map(x=>card(x,pcImages)).join('') + warningCard() +
+  pcOffers.slice(10).map(x=>card(x,pcImages)).join('');
+
+document.getElementById('reiRail').innerHTML = reiOffers.map(x=>card(x,reiImages,true)).join('');
+
+document.getElementById('cats').innerHTML = cats.map(([name,img]) =>
+  `<div class="cat"><img src="${img}" alt="${name}" loading="lazy"><span>${name}</span></div>`
+).join('');
+
+document.querySelectorAll('.arrow').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const rail=document.getElementById(btn.dataset.target);
+    rail.scrollBy({left:btn.classList.contains('next') ? 460 : -460,behavior:'smooth'});
+  });
+});
+
+/* Mouse drag on desktop; native swipe remains active on touch. */
+document.querySelectorAll('.rail').forEach(rail=>{
+  let down=false,startX=0,startScroll=0;
+  rail.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='touch') return;
+    down=true;startX=e.clientX;startScroll=rail.scrollLeft;rail.classList.add('dragging');
+  });
+  window.addEventListener('pointermove',e=>{
+    if(!down)return;
+    rail.scrollLeft=startScroll-(e.clientX-startX)*1.15;
+  });
+  window.addEventListener('pointerup',()=>{
+    if(!down)return;down=false;rail.classList.remove('dragging');
+  });
+});
+
+/* Autoplay with a single physical speed and pause on interaction. */
+const autoplay = [
+  {id:'pcRail',speed:52,delay:2800},
+  {id:'reiRail',speed:52,delay:2800}
+];
+autoplay.forEach(cfg=>{
+  const rail=document.getElementById(cfg.id);
+  let paused=false,last=performance.now(),carry=0;
+  const pause=()=>paused=true;
+  const resume=()=>{paused=false;last=performance.now()};
+  rail.addEventListener('mouseenter',pause);
+  rail.addEventListener('mouseleave',resume);
+  rail.addEventListener('pointerdown',pause,{passive:true});
+  rail.addEventListener('pointerup',()=>setTimeout(resume,900),{passive:true});
+  rail.addEventListener('touchstart',pause,{passive:true});
+  rail.addEventListener('touchend',()=>setTimeout(resume,900),{passive:true});
+  function tick(now){
+    const dt=Math.min(80,now-last); last=now;
+    if(!paused){
+      carry += dt;
+      if(carry >= cfg.delay){
+        const end=rail.scrollWidth-rail.clientWidth;
+        if(end>2){
+          const step=(cfg.speed*carry)/1000;
+          if(rail.scrollLeft >= end-2) rail.scrollTo({left:0,behavior:'smooth'});
+          else rail.scrollLeft += step;
+        }
+        carry=0;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+});
+</script>
+</body>
+</html>
